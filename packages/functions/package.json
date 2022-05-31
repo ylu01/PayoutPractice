@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "version": "0.0.0",
+  "description": "functions",
+  "author": "ylu01 <iamyangandirule@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/functions.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}

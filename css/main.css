@@ -14,9 +14,52 @@
 html {
   color: #222;
   font-size: 1em;
-  line-height: 1.4;
 }
 
+#redNumber{
+  color:red;
+}
+p{
+  display:inline;
+}
+body{
+  margin-left:5px;
+}
+img{
+  width:400px ;
+  height:100%;
+  object-fit:contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1{
+  text-align:center;
+}
+#question{
+  text-align:center;
+  height:140px;
+}
+#wrapper{
+  width:350px;
+  background-image: url('../img/chips1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../img/chips1.jpg');
+}
+#buttonWrapper {
+  margin-top: 40px;
+    display: inline-grid;
+  position: relative;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.inputStyle{
+  width:280px;
+  margin-bottom:5px;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -248,7 +291,6 @@ textarea {
     page-break-inside: avoid;
   }
 
-  p,
   h2,
   h3 {
     orphans: 3;

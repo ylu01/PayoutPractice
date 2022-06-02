@@ -1,9 +1,9 @@
 const rates = {
-    straights: 35,
-    splits: 17,
-    street: 11,
-    doubleStreet: 5,
-    corner: 8
+    Straight: 35,
+    Split: 17,
+    Street: 11,
+    "Double Street": 5,
+    "Corner": 8
 }
 
 let questionText = {};
@@ -32,7 +32,14 @@ function makeQuestion(obj){
 
             }
             if(rand){
-                text += key + ":" + rand + "<br>";
+                if(rand > 1)
+                {
+                    text += '<p id="redNumber">'  + rand + "</p> "+  "<p>" +key + "s</p>" +"<br>";
+                }
+                else{
+                    text += '<p id="redNumber">'  + rand + "</p> "+  "<p>" +key + "</p>" +"<br>";
+                }
+                
             }
             
         answer += (rand * rates[key]);

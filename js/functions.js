@@ -22,13 +22,19 @@ function makeQuestion(obj){
     let br;
     document.getElementById("answer").innerHTML = "";
     for (const [key, value] of Object.entries(obj)) {
-        rand = getRandomInt(6);
-        if(rand){
+        
             if(key === "corner" || key === "splits"){
                 rand = getRandomInt(21);
             }
-            text += key + ":" + rand + "<br>";
-        }
+            else{
+                rand = getRandomInt(6);
+                
+
+            }
+            if(rand){
+                text += key + ":" + rand + "<br>";
+            }
+            
         answer += (rand * rates[key]);
 
         

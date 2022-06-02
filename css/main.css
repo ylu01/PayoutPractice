@@ -26,29 +26,35 @@ body{
   margin-left:5px;
 }
 img{
-  width:400px ;
+  width:800px ;
   height:100%;
   object-fit:contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-h1, #answer{
+#answer{
+  text-align:center;
+}
+h1 {
+  margin:0;
   text-align:center;
 }
 #question{
+  margin-bottom:0;
+  font-size:45px;
   text-align:center;
-  height:140px;
+  height:280px;
 }
 #wrapper{
-  width:350px;
+  width:750px;
   background-image: url('../img/chips1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../img/chips1.jpg');
 }
 #buttonWrapper {
-  margin-top: 40px;
+  margin-top: 80px;
     display: inline-grid;
   position: relative;
   left: 50%;
@@ -60,18 +66,25 @@ h1, #answer{
   width:280px;
   margin-bottom:5px;
 }
-/* Uses vh and vm with calc */
-@media screen and (min-width: 25em){
-  html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
-}
 
-/* Safari <8 and IE <11 */
-@media screen and (min-width: 25em){
-  html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
-}
-
-@media screen and (min-width: 50em){
-html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+@media only screen and (max-width: 668px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
 }
 /*
  * Remove text-shadow in selection highlight:

@@ -11,8 +11,7 @@ questionText = makeQuestion(rates);
 console.log("------------------");
 console.log(questionText.question);
 console.log(questionText.answer);
-document.getElementById("answer").innerHTML = "";
-document.getElementById("answerButton").onclick = function() {reveal(questionText.answer)};
+document.getElementById("answerButton").onclick = function() {reveal()};
 document.getElementById("questionButton").onclick = function() {questionText = makeQuestion(rates)};
 
 function makeQuestion(obj){
@@ -20,6 +19,7 @@ function makeQuestion(obj){
     let rand;
     let answer = 0;
     let br;
+    hide();
     document.getElementById("answer").innerHTML = "";
     for (const [key, value] of Object.entries(obj)) {
         
@@ -43,11 +43,12 @@ function makeQuestion(obj){
             }
             
         answer += (rand * rates[key]);
-
+        
         
         //console.log(`${key}: ${value}`);
       }
       document.getElementById("question").innerHTML = text;
+      document.getElementById("answer").innerHTML = "Answer: " +answer;
       return {
           question: text,
           answer: answer
@@ -56,8 +57,11 @@ function makeQuestion(obj){
 function msg(){
     alert("wtf");
 }
-function reveal(answer){
-    document.getElementById("answer").innerHTML = "Answer: " +answer;
+function hide(){
+    document.getElementById("answer").style.visibility = "hidden";
+}
+function reveal(){
+    document.getElementById("answer").style.visibility = "visible";
 }
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);

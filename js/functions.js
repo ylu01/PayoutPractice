@@ -57,7 +57,7 @@ function msg(){
     alert("wtf");
 }
 function reveal(answer){
-    document.getElementById("answer").innerHTML = "The correct answer should be: " +answer;
+    document.getElementById("answer").innerHTML = "Answer: " +answer;
 }
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);

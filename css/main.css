@@ -33,7 +33,7 @@ img{
   background-attachment: fixed;
   background-size: cover;
 }
-h1{
+h1, #answer{
   text-align:center;
 }
 #question{

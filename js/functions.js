@@ -8,9 +8,6 @@ const rates = {
 
 let questionText = {};
 questionText = makeQuestion(rates);
-console.log("------------------");
-console.log(questionText.question);
-console.log(questionText.answer);
 document.getElementById("answerButton").onclick = function() {reveal()};
 document.getElementById("questionButton").onclick = function() {questionText = makeQuestion(rates)};
 
@@ -23,7 +20,7 @@ function makeQuestion(obj){
     document.getElementById("answer").innerHTML = "";
     for (const [key, value] of Object.entries(obj)) {
         
-            if(key === "corner" || key === "splits"){
+            if(key === "Corner" || key === "Splits"){
                 rand = getRandomInt(21);
             }
             else{
@@ -31,31 +28,29 @@ function makeQuestion(obj){
                 
 
             }
-            if(rand){
-                if(rand > 1)
-                {
-                    text += '<p id="redNumber">'  + rand + "</p> "+  "<p>" +key + "s</p>" +"<br>";
-                }
-                else{
+            if(rand && rand > 1){
+                text += '<p id="redNumber">'  + rand + "</p> "+  "<p>" +key + "s</p>" +"<br>";
+            }
+            else{
+                if(rand != 0){
                     text += '<p id="redNumber">'  + rand + "</p> "+  "<p>" +key + "</p>" +"<br>";
                 }
                 
+                }
+                answer += (rand * rates[key]);
             }
             
-        answer += (rand * rates[key]);
+        
         
         
         //console.log(`${key}: ${value}`);
-      }
+      
       document.getElementById("question").innerHTML = text;
       document.getElementById("answer").innerHTML = "Answer: " +answer;
       return {
           question: text,
           answer: answer
                 };
-}
-function msg(){
-    alert("wtf");
 }
 function hide(){
     document.getElementById("answer").style.visibility = "hidden";
